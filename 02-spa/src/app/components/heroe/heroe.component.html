@@ -1,0 +1,20 @@
+<h1 class="animated fateIn">{{ heroe.nombre | uppercase }} <small>({{ heroe.aparicion | date:'y' }})</small></h1>
+<hr>
+<div class="row animated fateIn fast">
+    <div class="col-md-4">
+        <img [src]="heroe.img" [alt]="heroe.nombre" class="img-fluid">
+        <br><br>
+        <a [routerLink]="['/heroes']" class="btn btn-outline-danger">Regresar</a>
+    </div>
+    <div class="col-md 8">
+        <h3>{{ heroe.nombre }}</h3>
+        <hr>
+        <p>
+            {{ heroe.bio }}
+        </p>
+        <div>
+            <img *ngIf="heroe.casa == 'DC'" src="assets/img/DC.png" width="51.2px" height="51.2px" alt="DC" class="img-fluid img-thumbnaill">
+            <img *ngIf="heroe.casa != 'DC'" src="assets/img/marvel.png" width="51.2px" height="51.2px" alt="Marvel" class="img-fluid img-thumbnail">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<h1>Buscador: <small>{{ termino }}</small></h1>
+<h2>Resultados: <small>{{ heroes.length }}</small></h2>
+<hr>
+<div *ngIf="heroes.length > 0" class="row row-cols-1 row-cols-md-3 g-4">
+    <app-heroe-tarjeta (heroeSeleccionado)="verHeroe($event)" [heroe]="heroe" [index]="heroe.idx" *ngFor="let heroe of heroes; let i = index"></app-heroe-tarjeta>
+</div>
+<div *ngIf="heroes.length == 0" class="col animated fadeIn fast">
+    <p>No se encuentran datos.</p>
+</div>
